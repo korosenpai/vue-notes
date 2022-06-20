@@ -1,30 +1,6 @@
 {
     "notes": [
-        {
-            "id": "664743",
-            "lastUpdated": "2022-06-20T20:34:16.437Z",
-            "title": "Things to code",
-            "body": "* in notes add shortcut to close sidebar\n* in notes cannot delete notes with tag 'important', tag input must be resized to fit all inp\n* in notes add support for markdown in text area, add support for tab in textarea, when sidebarcollapsed open another sidebar to the right that will display preview of markdown and will be resizable, can be disabled in note with tag \"no-md/nomd\"\n* better anidownloader\n* in frey va if command not found find closest for autocompletion and suggest --> *better* implement a search algorithm for path to find command researched or simply calculate precision with other commands (if search not found) and give autocompletion or run completion if match is really close\n\n> things to add in frey va raspberry pi\n* create ui interface for mobile\n* send one time reminders from phone that will pop up on computer at COMPUTERSTARTPATH (reminders.py)\n* send files (photos, videos) from phone to computer and vice versa",
-            "tags": [
-                "important"
-            ]
-        },
-        {
-            "id": "383346",
-            "lastUpdated": "2022-06-20T07:57:30.304Z",
-            "title": "Planning inviti Santa Severa",
-            "body": "cose che ho da fare:\n> 9/10 luglio addventure days\n> 17 luglio festa di fede\n\npersone che arriveranno:\n1> gabri, leo, rampo(?)\n2> claudio, valerio\n3> pera, damiano, benny\n4> ale, theo\n5> borgogni\n6> ferri\n\ndate:\n1 - 1/5 luglio -- ritornare poi\n5 - 9/10 luglio",
-            "tags": []
-        },
-        {
-            "id": "162546",
-            "lastUpdated": "2022-06-20T18:14:47.713Z",
-            "title": "Frey's wisdom pill",
-            "body": "if you can't finish that project no titanium bussy for today",
-            "tags": [
-                "startup"
-            ]
-        },
+
         {
             "id": "928375",
             "title": "take the fish for a walk",
