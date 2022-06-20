@@ -3,8 +3,10 @@
 /dist
 /dist_electron
 /data
-notes.py
 
+notes.py
+/src/data
+/src/config.json
 
 # local env files
 .env.local
