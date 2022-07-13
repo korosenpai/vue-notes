@@ -12,7 +12,7 @@
     <div class="searchbar">
       <img src="@/assets/search-bar-icons/magnifying-glass.svg" alt="" class="dropdown-icon">
       <input v-model="searchQuery" type="text" placeholder="">
-      <img src="@/assets/search-bar-icons/xmark.svg" alt="" class="dropdown-icon" @click="searchQuery = ''" style="cursor: pointer">
+      <img src="@/assets/search-bar-icons/xmark.svg" class="dropdown-icon" v-if="searchQuery" @click="searchQuery = ''" style="cursor: pointer" alt="empty the search query">
     </div>
 
     <!-- notes -->
