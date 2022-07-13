@@ -23,9 +23,11 @@ export function getNoteFromId(store, id) {
 import fs from 'fs'
 // import pathModule from 'path'
 // import storage from 'electron-json-storage'
-export function saveToJson(notes, lastOpened, notesJsonPath) {
-    // const path = app.getAppPath()
-    // const notesJsonPath = "C:/coding/javascript/projects/vue-notes/src/data/notes.json"
+export function saveToJson(storeState) {
+
+    const notes = storeState.notes
+    const lastOpened = storeState.selectedNoteId
+    const notesJsonPath = storeState.configs.notesJsonFile
 
     const data = JSON.stringify({"notes": notes, "lastOpened": lastOpened}, null, 4)
     

@@ -10,9 +10,10 @@ const notesfile = JSON.parse(notesfileRawData)
 
 export default createStore({
   state: {
+    configs,
     notes: notesfile.notes,
     selectedNoteId: notesfile.lastOpened,
-    sidebarCollapsed: false
+    sidebarCollapsed: true
   },
   getters: {
     notes(state) { return state.notes },
@@ -38,7 +39,7 @@ export default createStore({
       state.selectedNoteId = id //select note
       console.log(`created note: ${id}`)
 
-      saveToJson(state.notes, state.selectedNoteId, configs.notesJsonFile)
+      saveToJson(state)
     },
 
     saveNote(state, {id, title, body}) {
@@ -47,7 +48,7 @@ export default createStore({
       noteToSave.title = title
       noteToSave.body = body
 
-      saveToJson(state.notes, state.selectedNoteId, configs.notesJsonFile)
+      saveToJson(state)
     },
     
     removeNote(state, noteId) {
@@ -59,7 +60,7 @@ export default createStore({
       console.log(state.selectedNoteId)
       console.log(state.notes)
 
-      saveToJson(state.notes, state.selectedNoteId, configs.notesJsonFile)
+      saveToJson(state)
     },
 
 
@@ -80,7 +81,7 @@ export default createStore({
       console.log(`note: ${state.selectedNoteId} updated tag of index ${tagIndex}: ${newValue}`)
       state.notes.find(note => note.id == state.selectedNoteId).tags.splice(tagIndex, 1, newValue)
 
-      saveToJson(state.notes, state.selectedNoteId, configs.notesJsonFile)
+      saveToJson(state)
     },
 
     removeTag(state, tagIndex) {
@@ -88,7 +89,7 @@ export default createStore({
       console.log(`note: ${state.selectedNoteId} removed tag of index ${tagIndex}`)
       state.notes.find(note => note.id == state.selectedNoteId).tags.splice(tagIndex, 1)
       
-      saveToJson(state.notes, state.selectedNoteId, configs.notesJsonFile)
+      saveToJson(state)
     }
   },
   actions: {
