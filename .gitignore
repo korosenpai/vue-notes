@@ -6,7 +6,6 @@
 
 notes.py
 /src/data
-/src/config.json
 
 # local env files
 .env.local

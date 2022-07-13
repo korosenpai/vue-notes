@@ -14,7 +14,9 @@
     "@electron/remote": "^2.0.8",
     "core-js": "^3.8.3",
     "electron-json-storage": "^4.5.0",
+    "marked": "^4.0.18",
     "vue": "^3.2.13",
+    "vue-split-view": "^1.0.0",
     "vuex": "^4.0.0"
   },
   "devDependencies": {
