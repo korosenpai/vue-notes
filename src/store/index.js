@@ -13,7 +13,7 @@ export default createStore({
     configs,
     notes: notesfile.notes,
     selectedNoteId: notesfile.lastOpened,
-    sidebarCollapsed: true
+    sidebarCollapsed: false
   },
   getters: {
     notes(state) { return state.notes },
