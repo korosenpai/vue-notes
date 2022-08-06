@@ -19,10 +19,7 @@ export function getNoteFromId(store, id) {
     return store.getters.notes.find(note => note.id == id)
 }
 
-// import { app } from '@electron/remote'
 import fs from 'fs'
-// import pathModule from 'path'
-// import storage from 'electron-json-storage'
 export function saveToJson(storeState) {
 
     const notes = storeState.notes
