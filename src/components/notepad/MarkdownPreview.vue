@@ -1,5 +1,5 @@
 <template>
-    <div v-html="markdownToHtml"></div>
+    <div v-html="markdownToHtml" class="markdown-preview"></div>
 </template>
 
 <script setup>
@@ -23,6 +23,9 @@ const markdownToHtml = computed(() => {
 <style scoped lang="scss">
 .markdown-preview {
     overflow: auto;
+    text-align: left;
+    padding-left: 5%;
+
 }
 
 </style>
