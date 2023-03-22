@@ -4,18 +4,6 @@
         <input type="text" v-model="notesTitle" class="notes-title" placeholder="New Note" @change="saveNote()">
         <div class="separator"></div>
     </div>
-    
-    <!-- <Splitpanes class="notes-body">
-        <pane>
-            <textarea  v-model="notesBody" placeholder="Start writing..." @change="saveNote()"></textarea>
-        </pane>
-        <pane class="markdown-preview" v-if="MarkdownPreviewIsActive"> {{ notesBody }} </pane>
-    </Splitpanes> -->
-    <!-- <multipane>
-        <textarea  v-model="notesBody" placeholder="Start writing..." @change="saveNote()"></textarea>
-        <multipane-resizer></multipane-resizer>
-        <div class="markdown-preview" v-if="MarkdownPreviewIsActive"> {{ notesBody }} </div>
-    </multipane> -->
 
     <!-- TODO use teleport to define only once -->
     <textarea class="notes-body" v-if="!MarkdownPreviewIsActive" v-model="notesBody" placeholder="Start writing..." @change="saveNote()"></textarea>
@@ -30,11 +18,11 @@
     >
 
         <template #A id="split-view-notepad-panel">
-            <textarea  v-model="notesBody" placeholder="Start writing..." @change="saveNote()"></textarea>
+            <textarea @scroll="scrollNotepad" ref="notesBody" v-model="notesBody" placeholder="Start writing..." @change="saveNote()"></textarea>
         </template>
 
         <template #B>
-            <MarkdownPreview v-if="MarkdownPreviewIsActive" :notesBody="notesBody" />
+            <MarkdownPreview ref="markdownPreview" v-if="MarkdownPreviewIsActive" :notesBody="notesBody" />
         </template>
     </VueSplitView>
 
@@ -43,6 +31,9 @@
 </template>
 
 <script>
+// https://stackoverflow.com/questions/40730116/scroll-to-bottom-of-div-with-vue-js
+// TODO parallel div scroll
+
 import { getNoteFromId } from '@/functions.js'
 import Tags from '@/components/notepad/Tags.vue'
 import MarkdownPreview from '@/components/notepad/MarkdownPreview.vue'
@@ -82,6 +73,13 @@ export default {
     methods: {
         saveNote() {
             this.$store.commit("saveNote", { id: this.selectedNoteId, title: this.notesTitle, body: this.notesBody})
+        },
+
+        scrollNotepad({ target: { scrollTop, clientHeight, scrollHeight }}) {
+            // console.log("🚀 ~ file: Notepad.vue ~ line 79 ~ scrollNotepad ~ scrollHeight", scrollHeight)
+            // console.log("🚀 ~ file: Notepad.vue ~ line 79 ~ scrollNotepad ~ clientHeight", clientHeight)
+            // console.log("🚀 ~ file: Notepad.vue ~ line 79 ~ scrollNotepad ~ scrollTop", scrollTop)
+            // this.$refs.markdownPreview.scrollTop = scrollTop
         }
     },
 
