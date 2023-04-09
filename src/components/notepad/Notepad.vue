@@ -22,7 +22,7 @@
         </template>
 
         <template #B>
-            <MarkdownPreview ref="markdownPreview" v-if="MarkdownPreviewIsActive" :notesBody="notesBody" />
+            <MarkdownPreview ref="markdownPreview" :notesBody="notesBody" />
         </template>
     </VueSplitView>
 
